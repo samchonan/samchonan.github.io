@@ -396,7 +396,7 @@ function revealMostSelectedBabe() {
     const storyImage = document.getElementById('story-image');
     const text = document.getElementById('story-text');
     const choicesContainer = document.getElementById('choices');
-    const babeImagePath = `smaller_images/id_cards/${maxBabe}.png`;
+    const babeImagePath = `babeimages/${maxBabe}.png`;
 
     // Preload the image
     const img = new Image();
