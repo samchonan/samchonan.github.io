@@ -1,4 +1,4 @@
-# PersonalityQuiz
+# WhatBabeAreYouQuiz
 
 Credit to sophie006liu for creation of the source code. I modified her "What Vegetable Are You?" Quiz (which is super fun, by the way!) to work for my own game! github link:
 
