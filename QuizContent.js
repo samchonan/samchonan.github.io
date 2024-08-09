@@ -338,7 +338,7 @@ const personalities = {
     "ESFP": 0 // The Bard
 };
 
-// Everything below is taken from veggie game and Im honestly not too sure what it does
+// Everything below is taken from veggie game
 // ??
 
 let currentState = 1;
@@ -377,30 +377,30 @@ function changeState(newState, selectedPersonalities) {
     currentState = newState;
 
     if (currentState === 0) {
-        revealMostSelectedVegetable();
+        revealMostSelectedBabe();
     } else {
         renderState(currentState);
     }
 }
-function revealMostSelectedVegetable() {
+function revealMostSelectedBabe() {
     let maxCount = 0;
-    let maxVeggie = '';
+    let maxBabe = '';
 
-    for (const [vegetable, count] of Object.entries(personalities)) {
+    for (const [babe, count] of Object.entries(personalities)) {
         if (count > maxCount) {
             maxCount = count;
-            maxVeggie = vegetable;
+            maxBabe = babe;
         }
     }
 
     const storyImage = document.getElementById('story-image');
     const text = document.getElementById('story-text');
     const choicesContainer = document.getElementById('choices');
-    const veggieImagePath = `smaller_images/id_cards/${maxVeggie}.png`;
+    const babeImagePath = `smaller_images/id_cards/${maxBabe}.png`;
 
     // Preload the image
     const img = new Image();
-    img.src = veggieImagePath;
+    img.src = babeImagePath;
     img.className = 'responsive-image'; 
 
     // Create the share button
@@ -413,7 +413,7 @@ function revealMostSelectedVegetable() {
         storyImage.style.display = 'none';
         choicesContainer.style.display = 'none';
     
-        text.textContent = "Drumroll... here is your Veggie ID! Don't lose it! (Right click or hold the image to save)";
+        text.textContent = "Here is your babe!";
         text.appendChild(img);
 
         // Share button functionality
