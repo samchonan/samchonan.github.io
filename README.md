@@ -4,4 +4,4 @@ Credit to sophie006liu for creation of the source code. I modified her "What Veg
 
 A copy of her Apache license is attached, and I have followed the requirements for modifying and using her script.
 
-NOTICE: QuizContent.js is an edited version of sophie006liu's vegetal mainGame.js file with the story logic path being entirely rewritten.
+NOTICE: QuizContent.js is an edited version of sophie006liu's vegetal mainGame.js file with the story logic path being entirely rewritten. Changes were also made to file structure and contents, and my own photos were uploaded.
