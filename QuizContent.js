@@ -1,3 +1,5 @@
+//NOTICE: This is a modified version of sophie006liu's mainGame.js file. Story has been completely changed to follow the new logic tree, and file paths and variable names have been changed.
+
 const gameData = {
 	"1": {
 		"text": "It’s finally the day of the big mission. Are you ready?",
