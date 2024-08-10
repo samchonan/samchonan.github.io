@@ -1,5 +1,7 @@
 # WhatBabeAreYouQuiz
 
+To take the quiz, follow this link: https://samchonan.github.io
+
 Credit to sophie006liu for creation of the source code. We modified her "What Vegetable Are You?" Quiz (which is super fun, by the way!) to work for our own game! github link to original game source code: https://github.com/sophie006liu/vegetal
 
 A copy of her Apache license is attached, and I have followed the requirements for modifying and using her script. This is a reproduction with modifications.
