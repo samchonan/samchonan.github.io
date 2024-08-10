@@ -250,7 +250,7 @@ const gameData = {
 		"text": "You remember the issues you encountered during the mission. You…",
 		//"image" : "img.png",
 "choices": {
-			"Make an plan to implement changes so it never happens again": [30,["tactician", "leader", "oracle", "heroine", "veteran", "knight", "order", "mentor"]],
+			"Make a plan to implement changes so it never happens again": [30,["tactician", "leader", "oracle", "heroine", "veteran", "knight", "order", "mentor"]],
 			"Consider that it may never happen again the same way, but you\’ve experienced it once, so you\’re more prepared for next time!": [30,["scientist", "rebel", "creator", "magician", "engineer", "assassin", "warrior", "bard"]]
 		}
 	},
