@@ -275,7 +275,7 @@ const gameData = {
 		"text": "Your friend is home, and they smile at you when they open the door. You sit in relative silence for a while, before they ask you a question. Do you think the problem that happened today had a deeper meaning?",
 		//"image" : "smaller_images/snackies.png",
 "choices": {
-			"Based on your knowledge of the situation, there were a variety of factors which influenced the event/'s outcome.": [33,["veteran", "knight", "engineer", "assassin", "mentor", "warrior", "bard", "order"]],
+			"Based on your knowledge of the situation, there were a variety of factors which influenced the event\'s outcome.": [33,["veteran", "knight", "engineer", "assassin", "mentor", "warrior", "bard", "order"]],
 			"Everything has a deeper meaning\– you know that there are things you\’re missing, and you envision how they might all connect.": [33,["leader", "heroine", "rebel", "magician", "tactician", "oracle", "scientist", "creator"]]
 		}
 	},
@@ -348,8 +348,20 @@ function renderState(state) {
     const storyImage = document.getElementById('story-image');
     const choicesContainer = document.getElementById('choices');
 
-    const img = new Image();
-    img.src = gameData[state].image;
+	// Placeholder, uncomment the next 2 lines and delete this
+	const img = new Image();
+	img.src = "babeimages/tactician.png";
+	//img.style.border = '2px solid #b4c6dc'; //b4c6dc
+
+    // const img = new Image();
+	// img.src = gameData[state].image;
+
+	// Debugging code to log gameData and state
+	console.log('gameData:', gameData);
+	console.log('state:', state);
+	console.log(img);
+	console.log('img.src:', img.src);
+
 
     img.onload = () => {
         storyImage.src = img.src;
@@ -369,7 +381,7 @@ function renderState(state) {
 
 
 function changeState(newState, selectedPersonalities) { 
-    // console.log(personalities); 
+    console.log(personalities); 
     selectedPersonalities.forEach(personality => {
         personalities[personality]++;
     });
@@ -401,61 +413,89 @@ function revealMostSelectedBabe() {
     // Preload the image
     const img = new Image();
     img.src = babeImagePath;
-    img.className = 'responsive-image'; 
+    //img.className = 'responsive-image'; 
 
     // Create the share button
     const shareButton = document.createElement('button');
-    shareButton.textContent = 'Share the game with Friends';
+    shareButton.textContent = 'Share with friends!';
     shareButton.className = 'choice-button';
 
-    // Once the image is loaded, update the DOM
-    img.onload = () => {
-        storyImage.style.display = 'none';
-        choicesContainer.style.display = 'none';
-    
-        text.textContent = "Here is your babe!";
-        text.appendChild(img);
+	// Once the image is loaded, update the DOM
+	img.onload = () => {
+		storyImage.style.display = 'none';
+		choicesContainer.style.display = 'none';
+		
+		text.textContent = "";
+		
+		// Additional text
+		const additionalText = document.createElement('div');
+		additionalText.textContent = "Refresh the page to play again!";
+		
+		// Apend the new line to the text element
+        text.appendChild(additionalText);
+        additionalText.className = 'story-text';
 
-		// ??
-		/* I'd like to add text underneath the images here as like the little description where this person just shows an id card?
-		// Not sure how to do it though
+        // Append the image to the text element
+        //text.appendChild(img);
 
-		personalityDescriptions = ["The Tactician is strategic, insightful, and never short of ideas. She is inward-thinking and deeply reflective of her own intellectual landscape. She wishes to know everything, and others look to her for knowledge.",
-		"The Mad Scientist is plagued by her own imagination and creativity– and caters to its beck and call. Her insight is widely sought after, and it never falls short of its mark.",
-		"The Leader is a rational, ruthless decision-maker. She is intelligent and hard-working, and others look to her for wisdom and direction.",
-		"The Rebel is a playful contrarian, one who follows the dangerous path of individuality of thought. She loves to doubt, and her charismatic words and quick thinking get her what she wants when she wants it.",
-		"The Oracle is driven by a sense of purpose bigger than herself; she is the mentor behind growth and the mysterious instigator behind change.",
-		"The Creator is the lonely truthseer. And with what she sees, she creates– beautiful works which inspire and uplift.",
-		"The Heroine is a charismatic leader who flawlessly stands up for what she believes in. Others regard her insight as borderline telepathic. Her voice is powerful– and when it isn’t, she makes it so.",
-		"The Magician is filled with a free-spirited and open-hearted warmth. Her imagination is as bright as her magic, and her sense of wonder inspires connection within the souls of many.",
-		"The Veteran is as reliable and honest as she is strong. She has a sense for her own abilities, and she uses them tactfully and with unshakable integrity. She is the foundation by which everything grows.",
-		"The Knight is a loyal and altruistic protector. She does the work that no one sees and commits herself to a level beyond the comprehension of most.",
-		"The Order is the embodiment of right and wrong; it is she who determines the order of the world. She is the representation of a greater purpose and commits to the responsibility with grace.",
-		"The Mentor is the backbone of the community. She is the listening ear and the gentle guidance, and has a deep sense of justice.",
-		"The Engineer uses her creativity and intelligence– and her desire to destroy and create– to invent marvels as unpredictable as they are incredible. She chases her inspiration and craves the freedom to do as she wishes.",
-		"The Assassin is a shrouded free-thinker. She does not buy in much to the thoughts of others– including her superiors– and often does not realize how revolutionary and exceptional her actions are. To her, life is a quiet place of self-expression, and she has free reign over it.",
-		"The Warrior is upfront and spontaneous. Her hair-trigger decisions are matched evenly by strength and intelligence, and she does not allow herself to be ruled by the dichotomy of others.",
-		"The Bard is a fun-lover and always the center of attention. Her natural style and magnetic personality accompany her desire to live in the moment– and to help others to feel the excitement of it all."];
+		// Append the image to the text element
+        const storyImageDiv = document.createElement('div');
+        storyImageDiv.appendChild(img);
+        storyImageDiv.className = 'image-container';
+        text.appendChild(storyImageDiv);
 
-		for (int i = 1; i <= 16; ++i) {
-
+        // Create a new div for the description
+		const descriptionTitle = document.createElement('div');
+		if (maxBabe === "scientist") {
+			descriptionTitle.textContent = `You are the Mad ${maxBabe.charAt(0).toUpperCase() + maxBabe.slice(1)}!`;
+		} else {
+			descriptionTitle.textContent = `You are the ${maxBabe.charAt(0).toUpperCase() + maxBabe.slice(1)}!`;
 		}
-
-		//text.textContent = "";
-		*/
-
-        // Share button functionality
-        shareButton.onclick = () => {
-            const shareMessage = `Message! You can create yours at link`;
-            navigator.clipboard.writeText(shareMessage).then(() => {
-                alert('Link copied to clipboard!');
-            }).catch(err => {
-                alert('Failed to copy link. Please try again.');
-            });
-        };
-
-        text.appendChild(shareButton);
-    };
+		text.appendChild(descriptionTitle);
+		text.appendChild(descriptionTitle);
+        descriptionTitle.className = 'story-text';
+        descriptionTitle.style.fontSize = '27px';
+        descriptionTitle.style.fontWeight = 'bold';
+		
+		const personalityDescriptions = {
+			"tactician": "The Tactician is strategic, insightful, and never short of ideas. She is inward-thinking and deeply reflective of her own intellectual landscape. She wishes to know everything, and others look to her for knowledge.",
+			"scientist": "The Mad Scientist is plagued by her own imagination and creativity\– and caters to its beck and call. Her insight is widely sought after, and it never falls short of its mark.",
+			"leader": "The Leader is a rational, ruthless decision-maker. She is intelligent and hard-working, and others look to her for wisdom and direction.",
+			"rebel": "The Rebel is a playful contrarian, one who follows the dangerous path of individuality of thought. She loves to doubt, and her charismatic words and quick thinking get her what she wants when she wants it.",
+			"oracle": "The Oracle is driven by a sense of purpose bigger than herself; she is the mentor behind growth and the mysterious instigator behind change.",
+			"creator": "The Creator is the lonely truthseer. And with what she sees, she creates\– beautiful works which inspire and uplift.",
+			"heroine": "The Heroine is a charismatic leader who flawlessly stands up for what she believes in. Others regard her insight as borderline telepathic. Her voice is powerful\– and when it isn\’t, she makes it so.",
+			"magician": "The Magician is filled with a free-spirited and open-hearted warmth. Her imagination is as bright as her magic, and her sense of wonder inspires connection within the souls of many.",
+			"veteran": "The Veteran is as reliable and honest as she is strong. She has a sense for her own abilities, and she uses them tactfully and with unshakable integrity. She is the foundation by which everything grows.",
+			"knight": "The Knight is a loyal and altruistic protector. She does the work that no one sees and commits herself to a level beyond the comprehension of most.",
+			"order": "The Order is the embodiment of right and wrong; it is she who determines the order of the world. She is the representation of a greater purpose and commits to the responsibility with grace.",
+			"mentor": "The Mentor is the backbone of the community. She is the listening ear and the gentle guidance, and has a deep sense of justice.",
+			"engineer": "The Engineer uses her creativity and intelligence\– and her desire to destroy and create\– to invent marvels as unpredictable as they are incredible. She chases her inspiration and craves the freedom to do as she wishes.",
+			"assassin": "The Assassin is a shrouded free-thinker. She does not buy in much to the thoughts of others\– including her superiors\– and often does not realize how revolutionary and exceptional her actions are. To her, life is a quiet place of self-expression, and she has free reign over it.",
+			"warrior": "The Warrior is upfront and spontaneous. Her hair-trigger decisions are matched evenly by strength and intelligence, and she does not allow herself to be ruled by the dichotomy of others.",
+			"bard": "The Bard is a fun-lover and always the center of attention. Her natural style and magnetic personality accompany her desire to live in the moment\– and to help others to feel the excitement of it all."
+		};
+		
+		// Get the description based on maxBabe
+		const description = personalityDescriptions[maxBabe.toLowerCase()];
+		
+		const descriptionText = document.createElement('div');
+		descriptionText.textContent = description;
+		text.appendChild(descriptionText);
+		descriptionText.className = 'story-text';
+		
+		// Share button functionality
+		shareButton.onclick = () => {
+			const shareMessage = `Message! You can create yours at link`;
+			navigator.clipboard.writeText(shareMessage).then(() => {
+					alert('Link copied to clipboard!');
+				}).catch(err => {
+					alert('Failed to copy link. Please try again.');
+				});
+		};
+		
+		text.appendChild(shareButton);
+	};
 }
 
 
