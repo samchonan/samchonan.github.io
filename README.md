@@ -6,4 +6,4 @@ A copy of her Apache license is attached, and I have followed the requirements f
 
 NOTICE: QuizContent.js is an edited version of sophie006liu's vegetal mainGame.js file with the story logic path being entirely rewritten. Changes were also made to file structure and contents, and my own photos were uploaded. Descriptions were added for result images. Output structure was changed and used to include our own additional content, including modifications to print more text. Logic was changed to parse through additional information and output correct results. Game content and results were changed.
 
-NOTICE: index.html is an edited version of sophie006liu's vegetal index.html file with the contents, font, colors, formatting, and images changed. Changes were also made to file paths. Additional classes were added and outputs were changed.
+NOTICE: index.html is an edited version of sophie006liu's vegetal index.html file with the contents, font, colors, formatting, and images changed. Changes were also made to file paths. Additional classes were added and outputs were changed. Mobile responsiveness was modified and tested.
