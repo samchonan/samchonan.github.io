@@ -2,7 +2,8 @@
 
 <!-- NOTICE: This is a modified version of sophie006liu's index.html file. 
  The content, text, colors, font, formatting, file paths, and images have been changed. 
- Borders have been added and output structure has been changed and rewritten.-->
+ Borders have been added and output structure has been changed and rewritten.
+ Additional classes have been added and used to modify site appearance.-->
 
 <html lang="en">
 <head>
@@ -40,7 +41,7 @@
         }
 
         .title {
-            font-size: 21px;
+            font-size: 22px;
             margin-bottom: 3vh;
             color: #04080e;
         }
@@ -103,25 +104,51 @@
         /* padding-bottom: 5rem; */
         }
 
+        .intro-text {
+            color: #04080e;
+            /*margin-top: 1rem;
+            margin-bottom: 1rem;*/
+        }
+
+        .credit-text {
+            color: #04080e;
+            margin-top: 0.5rem;
+            /*margin-bottom: 1rem;*/
+        }
+
         .image-container {
             max-width: 100%; /* Set max width of image container*/
+            width: 0.5%;
             margin: 0 auto; /* Center the image horizontally */
-            border: 2px solid #b4c6dc; 
+            /*border: 2px solid #b4c6dc; */
+            overflow: hidden;
+        }
+        .image-containerDiv {
+            max-width: 100%; /* Set max width of image container*/
+            width: 98%;
+            margin: 0 auto; /* Center the image horizontally */
+            /*border: 2px solid #b4c6dc; */
             overflow: hidden;
         }
 
         .image-container img {
-            width: 100%; /* Make the image fill its container */
-            height: auto; /* Maintain aspect ratio */
+            /*width: 0.5%; /* Make the image fill its container */
+            /*height: auto; /* Maintain aspect ratio height: 1%;*/
+            display: block; /* Remove any extra space */
+            max-width: 100%; /* Ensure image does not exceed its container */
+        }
+
+        .image-containerDiv img{
             display: block; /* Remove any extra space */
             max-width: 100%; /* Ensure image does not exceed its container */
         }
 
         .responsive-image {
-            max-width: 98%;
+            max-width: 100%;
+            width: 98%;
             height: auto;
             display: block;
-            /*border: 2px solid #b4c6dc;*/
+            border: 2px solid #b4c6dc;
             overflow: hidden;
         }
     </style>
@@ -129,6 +156,8 @@
 <body>
     <div class="container">
         <div class="title" style="font-weight: bold; font-size: 27px;">What babe are you?</div> 
+        <div class="intro-text">The wind blows, the trees rustle, and you, you’re a babe. But… what babe are you? Take this assassin-themed personality type quiz to find out!</div> 
+        <div class="credit-text" style="font-size: 12px;">Art and Story: MaeEllen, Code: samchonan, gabgala, Original Code: sophie006liu</div> 
         <img id="homescreen" style="border: 2px solid #b4c6dc" src="babeimages/Illustration.png" alt="Story Image"/>
         <a href="#" class="start-button" style="margin-top: 2vh" onclick="startGame()">Start</a>
         
