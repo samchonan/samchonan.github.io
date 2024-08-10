@@ -9,6 +9,7 @@ QuizContent.js is a modified version of sophie006liu's mainGame.js source file.
 - Additional text was added to the intro screen.
 - Credits have been added at the beginning of the game.
 - Story images were effectively removed from the game, with the option to add them back in later.
+- Logic was added to look through descriptions and ensure the correct text printed.
 
 NOTICE:
 
