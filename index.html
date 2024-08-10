@@ -15,8 +15,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: Arial, Helvetica, sans-serif;
-            background: #ed9dc1;
+            font-family: 'Garamond', 'Times New Roman', serif;
+            background: #b4c6dc;
         }
 
         .container {
@@ -26,7 +26,7 @@
             max-width: calc(100vh * (9 / 16));
             padding: 20px;
             border-radius: 10px;
-            background: #d26c6c;
+            background: #e6edf3;
             /* background: #e5f2d2; */
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             text-align: center;
@@ -40,20 +40,23 @@
         .title {
             font-size: 21px;
             margin-bottom: 3vh;
+            color: #04080e;
         }
 
         .start-button {
             font-size: 21px;
+            color: #04080e;
             padding: 1vh 2vw;
             /* border: 2px solid #fcf0c0; */
-            background-color: #f06dc2;
+            border: 2px solid #ffff;
+            background-color: #d4e2ef;
             cursor: pointer;
             text-decoration: none;
             margin-bottom: 3vh;
         }
 
         .start-button:hover {
-            background-color: #bb33a9;
+            background-color: #f4f4f4;
         }
 
         .game-container {
@@ -72,18 +75,20 @@
         }
 
         .choice-button {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Garamond', 'Times New Roman', serif;
             font-size: 18px; /* Adjust font size to be smaller */
             padding: 1vh 1vw; /* Adjust padding based on viewport height and width */
-            border: 0.5px solid #751424; /* Solid border */
-            background-color: #f395c6; /* White background */
+            border: 2px solid #ffff;
+            background-color: #d4e2ef;
+            /*border: 0.5px solid #751424; /* Solid border */
+            /*background-color: #f395c6; /* White background */
             cursor: pointer; /* Pointer cursor on hover */
             transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
         }
 
         @media (hover: hover) {
             .choice-button:hover {
-                background-color: #ee84dd; /* Slightly darker background on hover */
+                background-color: #f4f4f4; /* Slightly darker background on hover */
             }
         }
         .choice-button:focus {
@@ -91,13 +96,16 @@
         }
         .story-text {
             font-size: 20px;
+            color: #04080e;
             margin-bottom: 1rem; /* Space above the choices container */
         /* padding-bottom: 5rem; */
         }
 
         .image-container {
-            max-width: 70%; /* Set max width of image container */
+            max-width: 100%; /* Set max width of image container*/
             margin: 0 auto; /* Center the image horizontally */
+            border: 2px solid #b4c6dc; 
+            overflow: hidden;
         }
 
         .image-container img {
@@ -108,16 +116,19 @@
         }
 
         .responsive-image {
-            max-width: 100%;
+            max-width: 98%;
             height: auto;
+            display: block;
+            /*border: 2px solid #b4c6dc;*/
+            overflow: hidden;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="title">What babe are you?</div> 
-        <img id="homescreen" style="padding-bottom: 15px" src="babeimages/bard.png" alt="Story Image"/>
-        <a href="#" class="start-button" onclick="startGame()">Start</a>
+        <div class="title" style="font-weight: bold; font-size: 27px;">What babe are you?</div> 
+        <img id="homescreen" style="border: 2px solid #b4c6dc" src="babeimages/Illustration.png" alt="Story Image"/>
+        <a href="#" class="start-button" style="margin-top: 2vh" onclick="startGame()">Start</a>
         
         <div class="game-container" id="game-container">
             <div class ="story-text" id="story-text"></div>
