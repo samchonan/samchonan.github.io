@@ -1,4 +1,5 @@
-//NOTICE: This is a modified version of sophie006liu's mainGame.js file. Story has been completely changed to follow the new logic tree, and file paths and variable names have been changed.
+//NOTICE: This is a modified version of sophie006liu's mainGame.js file. Story has been completely changed to follow the new logic tree, and file paths and variable names have been changed. Output was changed, with additional text displayed. 
+//Logic was added to print the proper names and descriptions, display everything correctly, and modifications were made to the display along with addiitonal logic to properly print the quiz results
 
 const gameData = {
 	"1": {
