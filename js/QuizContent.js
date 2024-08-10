@@ -482,7 +482,7 @@ function revealMostSelectedBabe() {
 		
 		// Share button functionality
 		shareButton.onclick = () => {
-			const shareMessage = `https://github.com/samchonan/babequiz.github.io`;
+			const shareMessage = `https://samchonan.github.io`;
 			navigator.clipboard.writeText(shareMessage).then(() => {
 					alert('Link copied to clipboard!');
 				}).catch(err => {
