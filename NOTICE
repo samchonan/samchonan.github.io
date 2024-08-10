@@ -6,6 +6,9 @@ QuizContent.js is a modified version of sophie006liu's mainGame.js source file.
 - Variable names have been changed.
 - My own photos have been uploaded.
 - Output of final result was modified, with additional text, result names, and logic.
+- Additional text was added to the intro screen.
+- Credits have been added at the beginning of the game.
+- Story images were effectively removed from the game, with the option to add them back in later.
 
 NOTICE:
 
@@ -15,6 +18,8 @@ index.html is a modified version of sophie006liu's index.html source file.
 - Basic site formatting has been changed.
 - Text and contents have been changed.
 - Borders were added around images and buttons.
+- Additional classes were created.
+- The opening screen was modified to look different, as was the end.
 
 NOTICE:
 
